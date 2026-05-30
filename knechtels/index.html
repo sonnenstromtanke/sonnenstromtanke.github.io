@@ -1,1 +1,260 @@
-Erster Platzhalter für unsere Wallbox Seite
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="☀️Sonnen🔋Strom🔌Tanke — ✅ frei, 24 kWh heute noch">
+<meta property="og:image" content="http://knechtel.eu/wallbox/sunrise.png">
+<meta property="og:url" content="https://sonnenstromtanke.github.io/knechtels/">
+<meta property="og:type" content="website">
+<title>☀️Sonnen🔋Strom🔌Tanke</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f0f4f0;
+    color: #333;
+    line-height: 1.6;
+  }
+  .hero-img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 24px 20px;
+  }
+  h1 {
+    font-size: 1.6em;
+    color: #2d6a2e;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .card h2 {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #2d6a2e;
+  }
+  .status-badge {
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin: 4px 0;
+  }
+  .status-free { background: #d4edda; color: #155724; }
+  .status-busy { background: #fff3cd; color: #856404; }
+  .kwh-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .kwh-box {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+    padding: 16px;
+    border-radius: 8px;
+    background: #e8f5e9;
+  }
+  .kwh-box .number {
+    font-size: 2em;
+    font-weight: 700;
+    color: #2d6a2e;
+  }
+  .kwh-box .label {
+    font-size: 0.85em;
+    color: #666;
+  }
+  .anleitung {
+    font-size: 0.95em;
+    color: #444;
+  }
+  .sessions-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+  }
+  .sessions-table th {
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 2px solid #e0e0e0;
+    color: #666;
+    font-weight: 600;
+  }
+  .sessions-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .lang-toggle {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .lang-toggle button {
+    background: none;
+    border: 2px solid #2d6a2e;
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #2d6a2e;
+    cursor: pointer;
+    margin: 0 4px;
+    opacity: 0.4;
+  }
+  .lang-toggle button.active {
+    opacity: 1;
+    background: #2d6a2e;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+<img class="hero-img" src="http://knechtel.eu/wallbox/sunrise.png" alt="Sonnenstrom Tankstelle">
+<div class="container">
+  <div class="lang-toggle">
+    <button id="btn-de" onclick="setLang('de')">DE</button>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+  <h1 data-i18n="title"></h1>
+
+  <div class="card">
+    <h2 data-i18n="statusHeading"></h2>
+    <div class="status-badge status-free" data-i18n="status"></div>
+    <p style="font-size:0.8em; color:#999; margin-top:8px;">↻ <span data-i18n="nextUpdate"></span> 13:30</p>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="forecastHeading"></h2>
+    <div class="kwh-row">
+      <div class="kwh-box">
+        <div class="number">24</div>
+        <div class="label" data-i18n="kwhToday"></div>
+        <p class="label" style="margin-top:8px;">⏰ <span data-i18n="chargeStartNow"></span></p>
+      </div>
+      <div class="kwh-box">
+        <div class="number">29</div>
+        <div class="label" data-i18n="kwhTomorrow"></div>
+        <p class="label" style="margin-top:8px;">⏰ <span data-i18n="chargeStartLabel"></span> <strong>~05:45</strong></p>
+      </div>
+    </div>
+    <p style="font-size:0.8em; color:#888; margin-top:8px;" data-i18n="batteryNote"></p>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="sessionsHeading"></h2>
+    <table class="sessions-table">
+      <thead>
+        <tr>
+          <th data-i18n="sessionsFrom"></th>
+          <th data-i18n="sessionsTo"></th>
+          <th>kWh</th>
+          <th data-i18n="sessionsSolar"></th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr><td>29.05. 07:11</td><td>29.05. 13:30</td><td>27.2</td><td>99%</td></tr>
+      <tr><td>26.05. 15:52</td><td>26.05. 16:21</td><td>2.0</td><td>99%</td></tr>
+      <tr><td>26.05. 13:02</td><td>26.05. 15:47</td><td>11.3</td><td>100%</td></tr>
+      
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="guideHeading"></h2>
+    <p class="anleitung" data-i18n="guideCharging"></p>
+    <p class="anleitung" style="margin-top:12px;" data-i18n="guideLeds"></p>
+    <p class="anleitung" style="margin-top:12px;" data-i18n="guideParking"></p>
+    <p class="anleitung" style="margin-top:12px;" data-i18n="guideBye"></p>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="nachmachenHeading"></h2>
+    <p class="anleitung" data-i18n="nachmachenText"></p>
+  </div>
+
+  <p style="text-align:center; font-size:0.75em; color:#aaa; margin-top:24px;" data-i18n="footer"></p>
+</div>
+<script>
+var connected = false;
+var charging = false;
+var i18n = {
+  de: {
+    title: "Willkommen an unserer <br>☀️Sonnen🔋Strom🔌Tanke",
+    statusHeading: "Status",
+    status: connected
+      ? (charging ? "🚗🔌 besetzt, ein Auto lädt bereits" : "🚗🔌 besetzt, ein Auto ist angeschlossen")
+      : '✅ Frei. Steht da schon ein Auto? <a href="mailto:sonnenstromtanke@icloud.com?subject=Wallbox%20-%20bin%20gleich%20da">Push Mail</a>',
+    forecastHeading: "⚡ Erwartete kWh für dein Auto",
+    kwhToday: "kWh heute",
+    kwhTomorrow: "kWh morgen",
+    batteryNote: "Da ist unser Hausbatterie-Bedarf schon abgezogen, das Haus hat immer Vorrang.",
+    chargeStartLabel: "ab",
+    chargeStartNow: "ab jetzt",
+    sessionsHeading: "🔋 Letzte Ladevorgänge",
+    sessionsFrom: "Von",
+    sessionsTo: "Bis",
+    sessionsSolar: "Solar",
+    guideHeading: "📖 Anleitung",
+    guideCharging: 'Das Laden geht immer, wenn die Sonne scheint. <br>⏳ Es ist langsamer, als du es an anderen Wallboxen gewohnt bist, wenn gerade wenig Sonne scheint oder erstmal das Haus geladen wird. Du musst also Zeit mitbringen. <br>💰 Wenn du magst, freuen wir uns über eine Spende von 10 Cent/kWh an die Türschwelle Hausnummer 34c oder <a href="https://paypal.me/Knechtel">paypal.me/Knechtel</a>, muss aber nicht, ist freiwillig.',
+    guideLeds: "<strong>Erklärung der LEDs an der Wallbox:</strong><br>🟡🟡🟡 alle gelb = jetzt scheint noch nicht genug Sonne oder das Haus wird geladen, die Wallbox pausiert gerade<br>🟢🟢🟡 ganz rechts gelb = die Sonne scheint mit halber Power<br>🟢🟢🟢 alle grün = die Sonne scheint und du lädst volle Power",
+    guideParking: '↪️ Damit das kurze Kabel reicht, musst du mit den meisten Autos rückwärts einparken. <br>💬 Bei Problemen <a href="mailto:sonnenstromtanke@icloud.com?subject=Hilfe%20bei%20der%20Wallbox">Push Mail</a>.',
+    guideBye: "Gute Fahrt und liebe Grüße! 👋",
+    nachmachenHeading: "💚 Willst du das nachmachen?",
+    nachmachenText: 'Hast du auch eine private Wallbox und willst sie gerne anderen zur Verfügung stellen? 🤷&nbsp;Davon hast du etwas, denn das Umweltbundesamt fördert jede geladene kWh mit dem THG-Quotenhandel, 💶&nbsp;sogar aktuell etwas mehr als die Einspeisevergutung. Davon haben alle etwas: 🌍&nbsp;weniger CO2 für die Umwelt, 🔌🚗&nbsp;mehr Ladepunkte bringen die Antriebswende voran, ⚡️&nbsp;das Stromnetz wird entlastet, wenn Solarstrom direkt verbraucht statt eingespeist wird etc. 🧳&nbsp;Vielleicht nutze ich in meinem nächsten Urlaub dann deine Wallbox? Mir hat der <a href="https://www.heise.de/hintergrund/THG-Quotenhandel-fuer-eigene-Wallbox-Noch-mehr-Geld-fuer-Elektroautofahrer-7218878.html">heise-Artikel</a> die daran geknüpften Bedingungen gut erklärt. Die Kurzfassung: verschenken ist am einfachsten, denn kWh-Tarif verlangt von dir einen geeichten kWh Zähler; Zeit-Tarif passt nicht zur wechselhaften Sonne. Keep it simple. Ich habe mich für den Anbieter <a href="https://geld-fuer-eauto.de/thg-quote-wallbox">geld-fuer-eauto.de</a> entschieden (keine Werbung). Den Quellcode dieser Statusseite findest du vielleicht bald auf meinem GitHub, sobald ich den Code aufgeräumt habe.',
+    nextUpdate: "Nächste Aktualisierung:",
+    footer: 'Mit 💚 von <a href="https://github.com/martinknechtel">Martin</a> und seinen Code Agenten 🤖'
+  },
+  en: {
+    title: "Welcome to our <br>☀️Solar🔋Power🔌Station",
+    statusHeading: "Status",
+    status: connected
+      ? (charging ? "🚗🔌 occupied, a car is currently charging" : "🚗🔌 occupied, a car is connected")
+      : '✅ Available. Another car already there? <a href="mailto:sonnenstromtanke@icloud.com?subject=Wallbox%20-%20heading%20over%20now">Push mail</a>',
+    forecastHeading: "⚡ Expected kWh for your car",
+    kwhToday: "kWh today",
+    kwhTomorrow: "kWh tomorrow",
+    batteryNote: "Home battery needs already deducted — the house always has priority.",
+    chargeStartLabel: "at",
+    chargeStartNow: "available now",
+    sessionsHeading: "🔋 Recent Charging Sessions",
+    sessionsFrom: "From",
+    sessionsTo: "To",
+    sessionsSolar: "Solar",
+    guideHeading: "📖 Guide",
+    guideCharging: 'Charging works whenever the sun is shining. <br>⏳ It\'s slower than what you might be used to from other wallboxes, especially when there\'s little sun or the house battery charges first. So bring some time. <br>💰 If you like, we appreciate a donation of 10 cents/kWh at the doorstep of house 34c or <a href="https://paypal.me/Knechtel">paypal.me/Knechtel</a> — no obligation, totally voluntary.',
+    guideLeds: "<strong>Wallbox LED guide:</strong><br>🟡🟡🟡 all yellow = not enough sun right now or the house is charging, wallbox is paused<br>🟢🟢🟡 rightmost yellow = sun is shining at half power<br>🟢🟢🟢 all green = sun is shining and you\'re charging at full power",
+    guideParking: '↪️ To reach with the short cable, you\'ll need to reverse park with most cars. <br>💬 <a href="mailto:sonnenstromtanke@icloud.com?subject=Wallbox%20issue">Push mail</a> if you need help.',
+    guideBye: "Happy driving and best wishes! 👋",
+    nachmachenHeading: "💚 Want to do this yourself?",
+    nachmachenText: 'Do you have a private wallbox and want to share it with others? 🤷&nbsp;You benefit too — in Germany, the Federal Environment Agency subsidizes every charged kWh through the THG quota system, 💶&nbsp;currently even slightly more than the feed-in tariff. Everyone benefits: 🌍&nbsp;less CO2 for the environment, 🔌🚗&nbsp;more charging points accelerate the EV transition, ⚡️&nbsp;the power grid is relieved when solar energy is consumed directly instead of being fed in, etc. 🧳&nbsp;Maybe I\'ll use your wallbox on my next vacation? This <a href="https://www.heise.de/hintergrund/THG-Quotenhandel-fuer-eigene-Wallbox-Noch-mehr-Geld-fuer-Elektroautofahrer-7218878.html">heise article</a> explained the conditions well. In short: giving it away for free is the simplest option, because a per-kWh tariff requires a certified meter; a time-based tariff doesn\'t suit the unpredictable sun. Keep it simple. I chose <a href="https://geld-fuer-eauto.de/thg-quote-wallbox">geld-fuer-eauto.de</a> as my provider (not sponsored). You might find the source code for this status page on my GitHub soon, once I\'ve cleaned up the code.',
+    nextUpdate: "Next update:",
+    footer: 'With 💚 by <a href="https://github.com/martinknechtel">Martin</a> and his code agents 🤖'
+  }
+};
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  var t = i18n[lang];
+  document.querySelectorAll("[data-i18n]").forEach(function(el) {
+    var key = el.getAttribute("data-i18n");
+    if (t[key]) el.innerHTML = t[key];
+  });
+  document.getElementById("btn-de").className = lang === "de" ? "active" : "";
+  document.getElementById("btn-en").className = lang === "en" ? "active" : "";
+}
+setLang(navigator.language.startsWith("de") ? "de" : "en");
+</script>
+</body>
+</html>
