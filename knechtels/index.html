@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:title" content="☀️ SonnenStromTanke — 🚗🔌 besetzt, 20 kWh heute noch">
+<meta property="og:title" content="☀️ SonnenStromTanke — ✅ frei, 19 kWh heute noch">
 <meta property="og:image" content="https://sonnenstromtanke.github.io/knechtels/sunrise.png">
 <meta property="og:url" content="https://sonnenstromtanke.github.io/knechtels/">
 <meta property="og:type" content="website">
@@ -132,15 +132,15 @@
 
   <div class="card">
     <h2 data-i18n="statusHeading"></h2>
-    <div class="status-badge status-busy" data-i18n="status"></div>
-    <p style="font-size:0.8em; color:#999; margin-top:8px;">↻ <span data-i18n="nextUpdate"></span> 12:00</p>
+    <div class="status-badge status-free" data-i18n="status"></div>
+    <p style="font-size:0.8em; color:#999; margin-top:8px;">↻ <span data-i18n="nextUpdate"></span> 12:15</p>
   </div>
 
   <div class="card">
     <h2 data-i18n="forecastHeading"></h2>
     <div class="kwh-row">
       <div class="kwh-box">
-        <div class="number">20</div>
+        <div class="number">19</div>
         <div class="label" data-i18n="kwhToday"></div>
         <p class="label" style="margin-top:8px;">⏰ <span data-i18n="chargeStartNow"></span></p>
       </div>
@@ -165,7 +165,7 @@
         </tr>
       </thead>
       <tbody>
-      <tr><td>04.06. 09:11</td><td>05.06. 11:16</td><td>26.1</td><td>99%</td></tr>
+      <tr><td>04.06. 09:11</td><td>05.06. 11:54</td><td>26.8</td><td>99%</td></tr>
       <tr><td>02.06. 17:53</td><td>02.06. 19:23</td><td>6.2</td><td>99%</td></tr>
       <tr><td>29.05. 07:11</td><td>29.05. 13:30</td><td>27.2</td><td>99%</td></tr>
       
@@ -189,8 +189,8 @@
   <p style="text-align:center; font-size:0.75em; color:#aaa; margin-top:24px;" data-i18n="footer"></p>
 </div>
 <script>
-var connected = true;
-var charging = true;
+var connected = false;
+var charging = false;
 var i18n = {
   de: {
     title: "Willkommen an unserer <br>☀️ SonnenStromTanke",
