@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:title" content="☀️ SonnenStromTanke — 🚗🔌 besetzt, 11 kWh heute noch">
+<meta property="og:title" content="☀️ SonnenStromTanke — ✅ frei, 10 kWh heute noch">
 <meta property="og:image" content="https://sonnenstromtanke.github.io/knechtels/sunrise.png">
 <meta property="og:url" content="https://sonnenstromtanke.github.io/knechtels/">
 <meta property="og:type" content="website">
@@ -132,15 +132,15 @@
 
   <div class="card">
     <h2 data-i18n="statusHeading"></h2>
-    <div class="status-badge status-busy" data-i18n="status"></div>
-    <p style="font-size:0.8em; color:#999; margin-top:8px;">↻ <span data-i18n="nextUpdate"></span> 16:00</p>
+    <div class="status-badge status-free" data-i18n="status"></div>
+    <p style="font-size:0.8em; color:#999; margin-top:8px;">↻ <span data-i18n="nextUpdate"></span> 16:15</p>
   </div>
 
   <div class="card">
     <h2 data-i18n="forecastHeading"></h2>
     <div class="kwh-row">
       <div class="kwh-box">
-        <div class="number">11</div>
+        <div class="number">10</div>
         <div class="label" data-i18n="kwhToday"></div>
         <p class="label" style="margin-top:8px;">⏰ <span data-i18n="chargeStartNow"></span></p>
       </div>
@@ -165,7 +165,7 @@
         </tr>
       </thead>
       <tbody>
-      <tr><td>19.06. 15:20</td><td>19.06. 15:38</td><td>1.8</td><td>99%</td></tr>
+      <tr><td>19.06. 15:20</td><td>19.06. 15:45</td><td>2.5</td><td>99%</td></tr>
       <tr><td>18.06. 07:39</td><td>18.06. 13:33</td><td>22.0</td><td>98%</td></tr>
       <tr><td>14.06. 10:10</td><td>15.06. 09:19</td><td>17.7</td><td>98%</td></tr>
       
@@ -189,8 +189,8 @@
   <p style="text-align:center; font-size:0.75em; color:#aaa; margin-top:24px;" data-i18n="footer"></p>
 </div>
 <script>
-var connected = true;
-var charging = true;
+var connected = false;
+var charging = false;
 var i18n = {
   de: {
     title: "Willkommen an unserer <br>☀️ SonnenStromTanke",
