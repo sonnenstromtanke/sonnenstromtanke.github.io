@@ -134,7 +134,7 @@
   <div class="card">
     <h2 data-i18n="statusHeading"></h2>
     <div class="status-badge status-busy" data-i18n="status"></div>
-    <p style="font-size:0.8em; color:#999; margin-top:8px;">↻ <span data-i18n="nextUpdate"></span> 19:00</p>
+    <p style="font-size:0.8em; color:#999; margin-top:8px;">↻ <span data-i18n="nextUpdate"></span> 19:15</p>
   </div>
 
   <div class="card">
@@ -143,12 +143,12 @@
       <div class="kwh-box">
         <div class="number">1</div>
         <div class="label" data-i18n="kwhToday"></div>
-        <p class="label" style="margin-top:8px;">⏰ <span data-i18n="chargeStartNow"></span></p>
+        <p class="label" style="margin-top:8px;">⏰ <span data-i18n="chargeStartLabel"></span> <strong>~19:15</strong></p>
       </div>
       <div class="kwh-box">
         <div class="number">30</div>
         <div class="label" data-i18n="kwhTomorrow"></div>
-        <p class="label" style="margin-top:8px;">⏰ <span data-i18n="chargeStartLabel"></span> <strong>~08:45</strong></p>
+        <p class="label" style="margin-top:8px;">⏰ <span data-i18n="chargeStartLabel"></span> <strong>~09:00</strong></p>
       </div>
     </div>
     <p style="font-size:0.8em; color:#888; margin-top:8px;" data-i18n="batteryNote"></p>
@@ -166,7 +166,7 @@
         </tr>
       </thead>
       <tbody>
-      <tr><td>11.08. 16:23</td><td>11.08. 18:16</td><td>8.1</td><td>99%</td></tr>
+      <tr><td>11.08. 16:23</td><td>11.08. 18:52</td><td>8.7</td><td>99%</td></tr>
       <tr><td>11.08. 13:15</td><td>11.08. 13:37</td><td>1.6</td><td>100%</td></tr>
       <tr><td>11.08. 11:54</td><td>11.08. 12:55</td><td>5.2</td><td>96%</td></tr>
       
@@ -191,7 +191,7 @@
 </div>
 <script>
 var connected = true;
-var charging = true;
+var charging = false;
 var reserved = false;
 var i18n = {
   de: {
