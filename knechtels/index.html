@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:title" content="☀️ SonnenStromTanke — 🚗🔌 besetzt, 1 kWh heute noch">
+<meta property="og:title" content="☀️ SonnenStromTanke — 🚗🔌 besetzt, 0 kWh heute noch">
 <meta property="og:image" content="https://sonnenstromtanke.github.io/knechtels/sunrise.png">
 <meta property="og:url" content="https://sonnenstromtanke.github.io/knechtels/">
 <meta property="og:type" content="website">
@@ -134,21 +134,21 @@
   <div class="card">
     <h2 data-i18n="statusHeading"></h2>
     <div class="status-badge status-busy" data-i18n="status"></div>
-    <p style="font-size:0.8em; color:#999; margin-top:8px;">↻ <span data-i18n="nextUpdate"></span> 21:45</p>
+    <p style="font-size:0.8em; color:#999; margin-top:8px;">↻ <span data-i18n="nextUpdate"></span> 22:00</p>
   </div>
 
   <div class="card">
     <h2 data-i18n="forecastHeading"></h2>
     <div class="kwh-row">
       <div class="kwh-box">
-        <div class="number">1</div>
+        <div class="number">0</div>
         <div class="label" data-i18n="kwhToday"></div>
-        <p class="label" style="margin-top:8px;">⏰ <span data-i18n="chargeStartNow"></span></p>
+        
       </div>
       <div class="kwh-box">
         <div class="number">4</div>
         <div class="label" data-i18n="kwhTomorrow"></div>
-        <p class="label" style="margin-top:8px;">⏰ <span data-i18n="chargeStartLabel"></span> <strong>~11:45</strong></p>
+        <p class="label" style="margin-top:8px;">⏰ <span data-i18n="chargeStartLabel"></span> <strong>~15:00</strong></p>
       </div>
     </div>
     <p style="font-size:0.8em; color:#888; margin-top:8px;" data-i18n="batteryNote"></p>
@@ -166,9 +166,9 @@
         </tr>
       </thead>
       <tbody>
+      <tr><td>16.08. 20:45</td><td>16.08. 21:41</td><td>3.8</td><td>97%</td></tr>
       <tr><td>16.08. 00:09</td><td>16.08. 13:29</td><td>7.0</td><td>100%</td></tr>
       <tr><td>15.08. 09:11</td><td>15.08. 15:08</td><td>12.0</td><td>100%</td></tr>
-      <tr><td>12.08. 23:46</td><td>13.08. 15:28</td><td>20.9</td><td>99%</td></tr>
       
       </tbody>
     </table>
@@ -191,7 +191,7 @@
 </div>
 <script>
 var connected = true;
-var charging = true;
+var charging = false;
 var reserved = false;
 var i18n = {
   de: {
