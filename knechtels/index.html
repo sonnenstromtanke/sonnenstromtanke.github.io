@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:title" content="☀️ SonnenStromTanke — 🚗🔌 besetzt, 17 kWh heute noch">
+<meta property="og:title" content="☀️ SonnenStromTanke — ✅ frei, 16 kWh heute noch">
 <meta property="og:image" content="https://sonnenstromtanke.github.io/knechtels/sunrise.png">
 <meta property="og:url" content="https://sonnenstromtanke.github.io/knechtels/">
 <meta property="og:type" content="website">
@@ -133,20 +133,20 @@
 
   <div class="card">
     <h2 data-i18n="statusHeading"></h2>
-    <div class="status-badge status-busy" data-i18n="status"></div>
-    <p style="font-size:0.8em; color:#999; margin-top:8px;">↻ <span data-i18n="nextUpdate"></span> 12:30</p>
+    <div class="status-badge status-free" data-i18n="status"></div>
+    <p style="font-size:0.8em; color:#999; margin-top:8px;">↻ <span data-i18n="nextUpdate"></span> 12:45</p>
   </div>
 
   <div class="card">
     <h2 data-i18n="forecastHeading"></h2>
     <div class="kwh-row">
       <div class="kwh-box">
-        <div class="number">17</div>
+        <div class="number">16</div>
         <div class="label" data-i18n="kwhToday"></div>
         <p class="label" style="margin-top:8px;">⏰ <span data-i18n="chargeStartNow"></span></p>
       </div>
       <div class="kwh-box">
-        <div class="number">26</div>
+        <div class="number">23</div>
         <div class="label" data-i18n="kwhTomorrow"></div>
         <p class="label" style="margin-top:8px;">⏰ <span data-i18n="chargeStartLabel"></span> <strong>~07:45</strong></p>
       </div>
@@ -166,7 +166,7 @@
         </tr>
       </thead>
       <tbody>
-      <tr><td>22.08. 13:57</td><td>23.08. 12:06</td><td>13.8</td><td>98%</td></tr>
+      <tr><td>22.08. 13:57</td><td>23.08. 12:24</td><td>14.4</td><td>98%</td></tr>
       <tr><td>21.08. 15:18</td><td>21.08. 16:34</td><td>1.4</td><td>99%</td></tr>
       <tr><td>21.08. 04:39</td><td>21.08. 15:02</td><td>14.4</td><td>99%</td></tr>
       
@@ -190,7 +190,7 @@
   <p style="text-align:center; font-size:0.75em; color:#aaa; margin-top:24px;" data-i18n="footer"></p>
 </div>
 <script>
-var connected = true;
+var connected = false;
 var charging = false;
 var reserved = false;
 var i18n = {
