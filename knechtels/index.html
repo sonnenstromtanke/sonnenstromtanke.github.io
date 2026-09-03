@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:title" content="☀️ SonnenStromTanke — ✅ frei, 16 kWh heute noch">
+<meta property="og:title" content="☀️ SonnenStromTanke — 🚗🔌 besetzt, 16 kWh heute noch">
 <meta property="og:image" content="https://sonnenstromtanke.github.io/knechtels/sunrise.png">
 <meta property="og:url" content="https://sonnenstromtanke.github.io/knechtels/">
 <meta property="og:type" content="website">
@@ -133,8 +133,8 @@
 
   <div class="card">
     <h2 data-i18n="statusHeading"></h2>
-    <div class="status-badge status-free" data-i18n="status"></div>
-    <p style="font-size:0.8em; color:#999; margin-top:8px;">↻ <span data-i18n="nextUpdate"></span> 00:45</p>
+    <div class="status-badge status-busy" data-i18n="status"></div>
+    <p style="font-size:0.8em; color:#999; margin-top:8px;">↻ <span data-i18n="nextUpdate"></span> 01:00</p>
   </div>
 
   <div class="card">
@@ -166,9 +166,9 @@
         </tr>
       </thead>
       <tbody>
+      <tr><td>04.09. 00:38</td><td>04.09. 00:42</td><td>0.2</td><td>95%</td></tr>
       <tr><td>03.09. 17:04</td><td>03.09. 17:26</td><td>1.7</td><td>90%</td></tr>
       <tr><td>01.09. 18:38</td><td>02.09. 15:31</td><td>13.1</td><td>99%</td></tr>
-      <tr><td>01.09. 09:35</td><td>01.09. 17:41</td><td>16.0</td><td>98%</td></tr>
       
       </tbody>
     </table>
@@ -190,7 +190,7 @@
   <p style="text-align:center; font-size:0.75em; color:#aaa; margin-top:24px;" data-i18n="footer"></p>
 </div>
 <script>
-var connected = false;
+var connected = true;
 var charging = false;
 var reserved = false;
 var i18n = {
