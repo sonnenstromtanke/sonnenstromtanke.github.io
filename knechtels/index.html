@@ -198,9 +198,9 @@ var i18n = {
     title: "Willkommen an unserer <br>☀️ SonnenStromTanke",
     statusHeading: "Status",
     status: reserved
-      ? "🅿️ Heute reserviert — ich brauche den Stellplatz selbst. Morgen gerne wieder!"
+      ? "🅿️ Heute reserviert — ich brauche den Stellplatz gerade selbst. Probiere es gerne morgen wieder!"
       : (connected
-      ? (charging ? "🚗🔌 besetzt, ein Auto lädt bereits" : "🚗🔌 besetzt, ein Auto ist angeschlossen")
+      ? (charging ? "🚗🔌 besetzt, Auto tankt Sonne" : "🚗🔌 besetzt, Auto wartet auf Sonne")
       : '✅ Frei, du kannst laden kommen.<br>Steht da schon ein 🚗? <a href="mailto:sonnenstromtanke@icloud.com?subject=Wallbox%20-%20kann%20da%20nicht%20parken">Push Mail</a>.'),
     forecastHeading: "⚡ Erwartete kWh für dein Auto",
     kwhToday: "kWh heute",
@@ -226,9 +226,9 @@ var i18n = {
     title: "Welcome to our <br>☀️ SolarPowerStation",
     statusHeading: "Status",
     status: reserved
-      ? "🅿️ Reserved today — I need the parking spot myself. Come back tomorrow!"
+      ? "🅿️ Reserved today — I need the parking spot myself right now. Feel free to try again tomorrow!"
       : (connected
-      ? (charging ? "🚗🔌 occupied, a car is currently charging" : "🚗🔌 occupied, a car is connected")
+      ? (charging ? "🚗🔌 occupied, car soaking up sun" : "🚗🔌 occupied, car waiting for sun")
       : '✅ Available, come on by to charge.<br>Already a 🚗 there? <a href="mailto:sonnenstromtanke@icloud.com?subject=Wallbox%20-%20can%27t%20park%20there">Push mail</a>.'),
     forecastHeading: "⚡ Expected kWh for your car",
     kwhToday: "kWh today",
